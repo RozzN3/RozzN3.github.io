@@ -2,6 +2,9 @@
     text-shadow: 0 0 10px rgb(255, 255, 255); /* kolor świecenia */
     cursor: pointer; /*zmienia kursor na ten klikajacy jak sie najedzie*/
     transition: text-shadow 0.5s; /* płynne pojawienie się efektu */
+    display: inline-block;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    transform: translateY(-3px);
 }
 
 .noi {
@@ -11,9 +14,60 @@
 .odstepy {
     line-height: 0.4; /* zmniejsza odstępy miedzy tekstem że góra dół */
 }
-
+ /* USTAWIENIE BANERU JAKO OBRAZEK */
 .baner {
   background-image: url(baner.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* EFEKT SZYBY ALE BARDZIEJ JAK BOX TO WYGLĄDA*/
+.glass {
+  background: #94544167; /* TŁO */
+  border: 1px solid rgb(255, 255, 255); /* KRAWĘDŹ */
+  backdrop-filter: blur(10px); /*TŁO NIBY ROZMAZANE, CZYLI ZE JAKBY BYL OBRAZEK TO BY SIE ROZMAZANY WYDAWAL ALE OBRAZKA NIE MA */
+  border-radius: 18px; /*NO RADIUS KRAWEDZI */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /*CIEN TEGO PUDLA*/
+  
+}
+
+
+/* ANIMOWANE TŁO */
+
+body {
+  /* Tło jest 4x większe, by mogło się płynnie przesuwać */
+  background-size: 400% 400%;
+  
+  /* Uruchomienie animacji przesuwania tła */
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Definicja animacji — tło przesuwa się w lewo i prawo */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* gejowyu tekst*/
+.rainbow-text {
+  /* Gradient jako tło tekstu */
+  background: linear-gradient(90deg, #ff7675, #fdcb6e, #55efc4, #74b9ff, #a29bfe);
+  
+  /* Powtarzanie gradientu, by „płynął” przez tekst */
+  background-size: 400%;
+  
+  /* Przezroczysty tekst z wypełnieniem gradientem */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Animacja przesuwania gradientu */
+  animation: textFlow 8s linear infinite;
+}
+
+/* Gradient porusza się z lewej na prawą */
+@keyframes textFlow {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
 }
