@@ -57,9 +57,9 @@ body {
   
   /* Powtarzanie gradientu, by „płynął” przez tekst */
   background-size: 400%;
-  
+
   /* Przezroczysty tekst z wypełnieniem gradientem */
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   
   /* Animacja przesuwania gradientu */
