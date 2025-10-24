@@ -1,0 +1,19 @@
+.japko:hover {
+    text-shadow: 0 0 10px rgb(255, 255, 255); /* kolor świecenia */
+    cursor: pointer; /*zmienia kursor na ten klikajacy jak sie najedzie*/
+    transition: text-shadow 0.5s; /* płynne pojawienie się efektu */
+}
+
+.noi {
+    text-decoration: none; /* usuwa podkreślenie */
+}
+
+.odstepy {
+    line-height: 0.4; /* zmniejsza odstępy miedzy tekstem że góra dół */
+}
+
+.baner {
+  background-image: url(baner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
