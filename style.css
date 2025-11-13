@@ -19,19 +19,19 @@
   background-image: url(baner.png);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 300px;
+  width: auto;
+  display: flex;
+  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center;     /* pionowe wyśrodkowanie */
+  margin: 0 auto;
 }
 
-/* EFEKT SZYBY ALE BARDZIEJ JAK BOX TO WYGLĄDA*/
-.glass {
-  background: #94544167; /* TŁO */
-  border: 1px solid rgb(255, 255, 255); /* KRAWĘDŹ */
-  backdrop-filter: blur(10px); /*TŁO NIBY ROZMAZANE, CZYLI ZE JAKBY BYL OBRAZEK TO BY SIE ROZMAZANY WYDAWAL ALE OBRAZKA NIE MA */
-  border-radius: 18px; /*NO RADIUS KRAWEDZI */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /*CIEN TEGO PUDLA*/
-  
+.kosmos {
+  background-image: url(baner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-
 /* ANIMOWANE TŁO */
 
 body {
