@@ -85,7 +85,7 @@ body {
   align-items: center;
   z-index: 9999;            /* bardzo wysoka warstwa — nad tabelami i menu */
   opacity: 0;
-  animation: fadeIn 0.5s ease forwards; /* efekt pojawienia */
+  animation: fadeIn 0.1s ease forwards; /* efekt pojawienia */
 }
 
 /* === OKIENKO === */
@@ -97,7 +97,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding: 40px 60px;
   text-align: center;
-  animation: popIn 0.5s ease;
+  animation: popIn 0.7s ease;
 }
 
 /* === ANIMACJE === */
@@ -144,4 +144,82 @@ body {
 /* === ZNIKANIE === */
 .fade-out {
   animation: fadeOut 0.5s ease forwards;
+}
+
+/* Główne okno slidera */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  aspect-ratio: 16/9;
+}
+
+/* Kontener wszystkich slajdów (obrazków) */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease; /* płynne przesuwanie */
+}
+
+/* Każdy slajd zajmuje dokładnie 100% szerokości slidera */
+.slides img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* dopasowanie bez rozciągania */
+}
+
+/* Styl dla przycisków strzałek */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+/* Efekt po najechaniu myszką */
+.arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Pozycje strzałek */
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+/* Kropki na dole slidera */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Pojedyncza kropka */
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Kropka aktywna (aktualny slajd) */
+.dot.active {
+  background: white;
 }
